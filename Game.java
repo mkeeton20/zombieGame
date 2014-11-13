@@ -1,3 +1,4 @@
+import java.util.Random;
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -19,6 +20,9 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+    private Random rand;
+    private int timer;
+    private int count;
         
     /**
      * Create the game and initialise its internal map.
@@ -27,6 +31,8 @@ public class Game
     {
         createRooms();
         parser = new Parser();
+        rand = new Random();
+        timer = rand.nextInt(6) + 7;
     }
 
     /**
@@ -72,10 +78,14 @@ public class Game
                 
         boolean finished = false;
         while (! finished) {
+            if(timer==count){
+                System.out.println("The Zombies Caught you and YOU Died AHHHHHHH D:");
+                break;
+            }
             Command command = parser.getCommand();
             finished = processCommand(command);
         }
-        System.out.println("Thank you for playing.  Good bye.");
+        System.out.println("Thank you for playing Goodbye!");
     }
 
     /**
@@ -158,6 +168,9 @@ public class Game
         else {
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
+            count++;
+            System.out.println(count);
+            System.out.println(timer);
         }
     }
 
