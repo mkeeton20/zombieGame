@@ -62,9 +62,10 @@ public class Game
         
         
         // initialise room exits
-        outside.setExit("east", entrance);
+        outside.setExit("south", entrance);
         
-        entrance.setExit("north", kitchen);
+        entrance.setExit("north", outside);
+        entrance.setExit("east",kitchen);
         
         kitchen.setExit("west", entrance);
         kitchen.setExit("south", diningRoom);
@@ -91,7 +92,7 @@ public class Game
         balcony.setExit("west", secondHall);
 
         thirdHall.setExit("down", secondHall);
-        thirdHall.setExit("west" playerRoom);
+        thirdHall.setExit("west", playerRoom);
         thirdHall.setExit("north", room2);
         thirdHall.setExit("east", bath);
         thirdHall.setExit("south", room3);
@@ -107,7 +108,7 @@ public class Game
         
         
 
-        currentRoom = outside;  // start game outside
+        currentRoom = kitchen;  // start game outside
     }
 
     /**
@@ -125,6 +126,11 @@ public class Game
             if(timer==count){
                 System.out.println("The Zombies Caught you and YOU Died AHHHHHHH D:");
                 break;
+            }
+            if(currentRoom.getShortDescription().equals("outside")){
+                System.out.println("You made it outside and you are now safe Congratulations!!");
+                break;
+            
             }
             Command command = parser.getCommand();
             finished = processCommand(command);
