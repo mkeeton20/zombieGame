@@ -87,5 +87,9 @@ public class Room
     {
         return exits.get(direction);
     }
+    public void grab(Command command)
+    {
+        System.out.println("Do What?");
+    }
 }
 

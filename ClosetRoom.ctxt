@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=description
+comment0.target=ClosetRoom(java.lang.String)
+comment1.params=command
+comment1.target=void\ grab(Command)
+numComments=2

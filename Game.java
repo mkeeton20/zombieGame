@@ -40,30 +40,74 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theater, pub, lab, office;
+        Room outside, entrance, kitchen, hall, diningRoom, office, secondHall, balcony, closet, familyRoom, thirdHall, bath, room2, room3, playerRoom; 
       
         // create the rooms
-        outside = new Room("outside the main entrance of the university");
-        theater = new Room("in a lecture theater");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
+        outside = new Room("outside");
+        entrance = new Room("at the entrance");
+        kitchen = new Room("in the kitchen");
+        hall = new Room("in the first floor hall");
+        diningRoom = new Room ("in the dining room");
+        office = new Room("in the office");
+        secondHall = new Room("in the second floor hall");
+        balcony = new Room("near the balcony");
+        closet = new Room("in the closet");
+        familyRoom = new Room("in the family room");
+        thirdHall = new Room("in the third floor hall");
+        bath = new Room("in the bath");
+        room2 = new Room("in your brother's room");
+        room3 = new Room("in your parents' room");
+        playerRoom = new Room("in your room");
+        
+        
         
         // initialise room exits
-        outside.setExit("east", theater);
-        outside.setExit("south", lab);
-        outside.setExit("west", pub);
+        
+        entrance.setExit("north", outside);
+        entrance.setExit("east",kitchen);
+        
+        kitchen.setExit("west", entrance);
+        kitchen.setExit("south", diningRoom);
+        
+        diningRoom.setExit("north", kitchen);
+        diningRoom.setExit("east", hall);
+        
+        hall.setExit("west", diningRoom);
+        hall.setExit("east", office);
+        hall.setExit("up", secondHall);
+        
+        office.setExit("west", hall);
 
-        theater.setExit("west", outside);
+        secondHall.setExit("down", hall);
+        secondHall.setExit("up", thirdHall);
+        secondHall.setExit("east", balcony);
+        secondHall.setExit("west", closet);
+        secondHall.setExit("south", familyRoom);
+        
+        familyRoom.setExit("north", secondHall);
+        
+        closet.setExit("east", secondHall);
+        
+        balcony.setExit("west", secondHall);
 
-        pub.setExit("east", outside);
+        thirdHall.setExit("down", secondHall);
+        thirdHall.setExit("west", playerRoom);
+        thirdHall.setExit("north", room2);
+        thirdHall.setExit("east", bath);
+        thirdHall.setExit("south", room3);
+        
+        
+        playerRoom.setExit("north", thirdHall);
+        
+        bath.setExit("west", thirdHall);
+        
+        room2.setExit("south", thirdHall);
+        
+        room3.setExit("north", thirdHall);
+        
+        
 
-        lab.setExit("north", outside);
-        lab.setExit("east", office);
-
-        office.setExit("west", lab);
-
-        currentRoom = outside;  // start game outside
+        currentRoom = playerRoom;  // start game in player's room
     }
 
     /**
@@ -81,6 +125,11 @@ public class Game
             if(timer==count){
                 System.out.println("The Zombies Caught you and YOU Died AHHHHHHH D:");
                 break;
+            }
+            if(currentRoom.getShortDescription().equals("outside")){
+                System.out.println("You made it outside and you are now safe Congratulations!!");
+                break;
+            
             }
             Command command = parser.getCommand();
             finished = processCommand(command);
@@ -124,6 +173,9 @@ public class Game
         }
         else if (commandWord.equals("quit")) {
             wantToQuit = quit(command);
+        }
+        else if (commandWord.equals("grab") && currentRoom.getShortDescription().equals("in the closet") ){
+        
         }
         // else command not recognised.
         return wantToQuit;

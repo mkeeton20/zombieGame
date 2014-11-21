@@ -17,4 +17,6 @@ comment4.text=\n\ Return\ a\ string\ describing\ the\ room's\ exits,\ for\ examp
 comment5.params=direction
 comment5.target=Room\ getExit(java.lang.String)
 comment5.text=\n\ Return\ the\ room\ that\ is\ reached\ if\ we\ go\ from\ this\ room\ in\ direction\n\ "direction".\ If\ there\ is\ no\ room\ in\ that\ direction,\ return\ null.\n\ @param\ direction\ The\ exit's\ direction.\n\ @return\ The\ room\ in\ the\ given\ direction.\n
-numComments=6
+comment6.params=command
+comment6.target=void\ grab(Command)
+numComments=7

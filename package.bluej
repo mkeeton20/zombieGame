@@ -55,7 +55,7 @@ target2.typeParameters=
 target2.width=100
 target2.x=340
 target2.y=60
-target3.editor.height=716
+target3.editor.height=712
 target3.editor.width=1280
 target3.editor.x=0
 target3.editor.y=23
@@ -81,8 +81,13 @@ target4.typeParameters=
 target4.width=130
 target4.x=490
 target4.y=200
+<<<<<<< HEAD
 target5.editor.height=1097
 target5.editor.width=1920
+=======
+target5.editor.height=712
+target5.editor.width=1280
+>>>>>>> b48fd66d67e2f1fefd48f5780cabd3ba3dc467cf
 target5.editor.x=0
 target5.editor.y=23
 target5.height=60
