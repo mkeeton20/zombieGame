@@ -144,7 +144,7 @@ public class Game
     {
         System.out.println();
         System.out.println("Welcome to the World of Zuul!");
-        System.out.println("World of Zuul is a new, incredibly boring adventure game.");
+        System.out.println("World of Zuul is a text-based computer game.");
         System.out.println("Type 'help' if you need help.");
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
@@ -190,8 +190,11 @@ public class Game
      */
     private void printHelp() 
     {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
+        System.out.println("You wake up alone in a house.");
+        System.out.println("You can type 'go' and then any number of directions such as:");
+        System.out.println("West, East, North, South, Up, Down. For example 'go north'");
+        System.out.println("The point of the game is to escape before the timer is up.");
+        System.out.println("GOOD LUCK!");
         System.out.println();
         System.out.println("Your command words are:");
         parser.showCommands();
