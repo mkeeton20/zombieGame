@@ -145,6 +145,12 @@ public class Game
         System.out.println();
         System.out.println("Welcome to the World of Zuul!");
         System.out.println("World of Zuul is a text-based computer game.");
+        System.out.println("You wake up alone in a room. It is dark and you do not recognize your surroundings.");
+        System.out.println("After trying to move, you feel stiff and full of aches.  You are hurt but you manage");
+        System.out.println("To stumble to your feet.  As you gather your bearings, you realize there is a man in the room.");
+        System.out.println("Upon further inspection, you realize that the figure is not a man, but a ZOMBIE!");
+        System.out.println("You have to RUN! Escape the house before the zombie catches you!");
+        System.out.println(
         System.out.println("Type 'help' if you need help.");
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
