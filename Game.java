@@ -51,7 +51,7 @@ public class Game
         office = new Room("in the office");
         secondHall = new Room("in the second floor hall");
         balcony = new Room("near the balcony");
-        closet = new Room("in the closet");
+        closet = new Room("in the closet there /n is a key on the floor");
         familyRoom = new Room("in the family room");
         thirdHall = new Room("in the third floor hall");
         bath = new Room("in the bath");
@@ -175,7 +175,7 @@ public class Game
             wantToQuit = quit(command);
         }
         else if (commandWord.equals("grab") && currentRoom.getShortDescription().equals("in the closet") ){
-        
+        currentRoom.grab(command);
         }
         // else command not recognised.
         return wantToQuit;
