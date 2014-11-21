@@ -196,7 +196,7 @@ public class Game
         System.out.println("The point of the game is to escape before the timer is up.");
         System.out.println("GOOD LUCK!");
         System.out.println();
-        System.out.println("Your command words are:");
+        System.out.println("Your command words are: go, quit, help, grab");
         parser.showCommands();
     }
 
