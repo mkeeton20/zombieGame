@@ -43,22 +43,23 @@ public class Game
     {
         Room outside, entrance, kitchen, hall, diningRoom, office, secondHall, balcony, closet, familyRoom, thirdHall, bath, room2, room3, playerRoom; 
       
-        // create the rooms
-        outside = new Room("outside");
-        entrance = new Room("at the entrance");
-        kitchen = new Room("in the kitchen");
-        hall = new Room("in the first floor hall");
-        diningRoom = new Room ("in the dining room");
-        office = new Room("in the office");
-        secondHall = new Room("in the second floor hall");
-        balcony = new Room("near the balcony");
-        closet = new  ClosetRoom("in the closet there /n is a key on the floor");
-        familyRoom = new Room("in the family room");
-        thirdHall = new Room("in the third floor hall");
-        bath = new Room("in the bath");
-        room2 = new Room("in your brother's room");
-        room3 = new Room("in your parents' room");
-        playerRoom = new Room("in your room");
+
+        outside = new Room("outside! Your surge of warm happiness quickly replaced by spine-chilling cold dread as you hear helpless screams In the distance.  As you look out into your neighborhood, you see fire spread throughtout, and people running for their lives. Zombies litter the streets, maiming and devouring any flesh they can get their hands on.  The end of the world seems to be upon us.");
+        entrance = new Room("in the main enterance lobby. You can see the front door.");
+        kitchen = new Room("in the kitchen. Pots, pans, silver, and piles of shattered glass cover the floor.  You must be careful where you step.");
+        hall = new Room("in the first floor hall.  This is the main hall that leads to the kitchen and dining room.  You should be able to find an exit on this floor.");
+        diningRoom = new Room ("in the dining room. You remember having countless dinners with your family here.  You wonder if there will ever be another one.");
+        office = new Room("in the office. Your father used to work in here.  His work papers are spread about, but you are pretty sure that had nothing to do with the blast you felt earlier. The computer monitor is smashed to pieces on the ground, too.");
+        secondHall = new Room("in the second floor hall. You remember running through this hall every day as a kid.  You would race your brother from end to end.");
+        balcony = new Room("near the balcony.  Atleast a 20ft drop to the ground.  Maybe you should try to get to the first floor and find a door.");
+        closet = new ClosetRoom("in the closet.  Your mother always was a pack rat.  The closet is nothing more than a pile of miscellaneous garbage now.");
+        familyRoom = new Room("in the family room.  The television has a huge hole in it.  What happened?");
+        thirdHall = new Room("in the third floor hall.  The stairs to go down is in this hallway.");
+        bath = new Room("This is the bathroom you and your brother share.  It was always too small.");
+        room2 = new Room("in your brother's room.  Your older's brother room.  You carefully enter the room, stepping over piles of clothing. You approach the bed, but it is empty.  Must keep looking.");
+        room3 = new Room("in your parents' room.  You enter in hopes this is just a game by your parents, but inside you just find a dark room with glass on the floor.  The windows on both walls are completely shattered.  The blast must have been monstrous to do this damage.");
+        playerRoom = new Room("in your room.  THERE'S A ZOMBIE, GET OUT.");
+
         
         
         
@@ -147,13 +148,19 @@ public class Game
         System.out.println();
         System.out.println("Welcome to the World of Zuul!");
         System.out.println("World of Zuul is a text-based computer game.");
-        System.out.println("You wake up alone in a room. It is dark and you do not recognize your surroundings.");
+        System.out.println("");
+        System.out.println("A strong wave of energy shakes you awake. You can feel the entire house shake to this outside force. ");
+        System.out.println("It is dark, but you find yourself in your bedroom.");
         System.out.println("After trying to move, you feel stiff and full of aches.  You are hurt but you manage");
         System.out.println("To stumble to your feet.  As you gather your bearings, you realize there is a man in the room.");
         System.out.println("Upon further inspection, you realize that the figure is not a man, but a ZOMBIE!");
         System.out.println("You have to RUN! Escape the house before the zombie catches you!");
-        System.out.println();
-        System.out.println("Type 'help' if you need help.");
+
+        System.out.println("The counter is how many moves you have left, you must escape the house");
+        System.out.println("before the counter reaches zero or you DIE.");
+        System.out.println("");
+        System.out.println("For further instructions, please type *help* ");
+
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
     }
@@ -201,7 +208,7 @@ public class Game
     {
         System.out.println("You wake up alone in a house.");
         System.out.println("You can type 'go' and then any number of directions such as:");
-        System.out.println("West, East, North, South, Up, Down. For example 'go north'");
+        System.out.println("West, East, North, South, Up, Down. For example 'go north' or 'go up'");
         System.out.println("The point of the game is to escape before the timer is up.");
         System.out.println("GOOD LUCK!");
         System.out.println();
