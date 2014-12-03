@@ -20,6 +20,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+    public Room checkRoom;
     private Random rand;
     private int timer;
     private int count;
@@ -32,7 +33,7 @@ public class Game
         createRooms();
         parser = new Parser();
         rand = new Random();
-        timer = rand.nextInt(6) + 7;
+        timer = rand.nextInt(8) + 10;
     }
 
     /**
@@ -51,7 +52,7 @@ public class Game
         office = new Room("in the office");
         secondHall = new Room("in the second floor hall");
         balcony = new Room("near the balcony");
-        closet = new Room("in the closet there /n is a key on the floor");
+        closet = new  ClosetRoom("in the closet there /n is a key on the floor");
         familyRoom = new Room("in the family room");
         thirdHall = new Room("in the third floor hall");
         bath = new Room("in the bath");
@@ -106,8 +107,9 @@ public class Game
         room3.setExit("north", thirdHall);
         
         
-
-        currentRoom = playerRoom;  // start game in player's room
+       
+        currentRoom = playerRoom;
+        checkRoom = closet;// start game in player's room
     }
 
     /**
@@ -150,7 +152,7 @@ public class Game
         System.out.println("To stumble to your feet.  As you gather your bearings, you realize there is a man in the room.");
         System.out.println("Upon further inspection, you realize that the figure is not a man, but a ZOMBIE!");
         System.out.println("You have to RUN! Escape the house before the zombie catches you!");
-        System.out.println(
+        System.out.println();
         System.out.println("Type 'help' if you need help.");
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
@@ -180,8 +182,9 @@ public class Game
         else if (commandWord.equals("quit")) {
             wantToQuit = quit(command);
         }
-        else if (commandWord.equals("grab") && currentRoom.getShortDescription().equals("in the closet") ){
+        else if (commandWord.equals("grab") ){
         currentRoom.grab(command);
+        checkRoom.makeItem();
         }
         // else command not recognised.
         return wantToQuit;
@@ -225,6 +228,9 @@ public class Game
 
         if (nextRoom == null) {
             System.out.println("There is no door!");
+        }
+        else if (nextRoom.getShortDescription().equals("outside") && checkRoom.itemCheck() == false ) {
+        System.out.println("You need the key to escape!!");
         }
         else {
             currentRoom = nextRoom;

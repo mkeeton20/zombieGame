@@ -7,21 +7,29 @@
  */
 public class ClosetRoom extends Room
 {
+    public String key = "";
+    public boolean hasKey = false;
    public ClosetRoom(String description) 
     {
         super(description);
+        String key= "";
     }
     
     public void grab(Command command)
     {
-        if(command.getSecondWord().equals("key"))
-        {
+        
             System.out.println("You grab the key off the floor " +
                 "it is added to your inventory");
-        }
-        else
-        {
-            super.grab(command);
-        }
+                hasKey = true;
+        
+    }
+    public void makeItem(){
+    
+    String key = "Key";
+    
+    }
+    public boolean itemCheck(){
+    
+      return hasKey;
     }
 }

@@ -91,5 +91,17 @@ public class Room
     {
         System.out.println("Do What?");
     }
+    public void makeItem(){
+    
+    System.out.println("This isnt working");
+    
+    }
+    public boolean itemCheck(){
+    
+      
+        System.out.println("This either");
+        return true;
+    
+    }
 }
 
